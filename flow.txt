@@ -1,0 +1,56 @@
+Initially, I created an app.js 
+    -> for eg: 
+        const os = require('os')
+        console.log(os.type());
+        run -> node app
+
+Here, I have used npm over yarn. Because, npm is best choice for small peroject ...
+
+1. npm init -y (-y : set the default value)
+    Installed package.json
+
+2. npm i package
+    Installed package-lock.json
+    Installed node_modules
+
+3. npm i nodemon -D (-D for developer dependency)
+    In package.json -> 
+            "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1", -> default
+                "start": "node app.js", -> npm start
+                "dev": "nodemon app" -> npm run dev
+            },
+
+4. npm install express mongoose dotenv cors
+    Install the required packages which is using by us
+
+5. Create an .env
+    PORT = 5001 -> server running port number
+    MONGODB_URL = mongodb+srv://thirumenimallieswaran:<db_password>@cluster0.samn2.mongodb.net/<db_name>?retryWrites=true&w=majority&appName=Cluster0 ->  node js
+    db_password : Thiru%402811 (Thiru@2811)
+    db_name : rockpaperscissors
+
+    -> npm i mongodb
+
+    compass -> mongodb+srv://thirumenimallieswaran:<db_password>@cluster0.samn2.mongodb.net/ 
+    db_password: Thiru%402811 -> @: %40
+
+
+app.js
+
+    I used,
+        dotenv -> it is used to manage environment variables
+        cors -> cross-origin resource sharing. To providing a Connect/Express middleware that can be used to enable CORS with various options
+
+        app.js flow
+
+        1. import required package (express, mongoose, dotenv) -> const express = require('express')
+        2. initialize the package -> const app = express()
+        3. access the .env file -> dotenv.config()
+        4. initialize the constants -> port -> const PORT = process.env.PORT || 5001
+        5. MongoDB connection function 
+        6. Define routes
+        7. Main function to start the server
+        8. Start the server
+
+        
